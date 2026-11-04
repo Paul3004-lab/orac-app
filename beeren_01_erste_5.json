@@ -1,0 +1,415 @@
+{
+  "version": "1.0",
+  "sprache": [
+    "de",
+    "en"
+  ],
+  "datenbank_status": "Wissenschaftlicher Arbeitsstand – erste 5 Beeren; noch nicht in die App integrieren",
+  "hinweis": "ORAC-Werte sind bewusst null, solange kein belastbarer, methodisch nachvollziehbarer Einzelwert mit passender Lebensmittelbeschreibung und Quelle dokumentiert ist. Leere Nährstofffelder bedeuten: noch nicht recherchiert, nicht null.",
+  "lebensmittel": [
+    {
+      "id": "berry_001",
+      "name_de": "Kulturheidelbeeren",
+      "name_en": "Cultivated blueberries",
+      "wissenschaftlicher_name": "Vaccinium corymbosum",
+      "kategorie": "Beeren",
+      "lebensmittelzustand": "roh, frisch; Sorte und Anbaugebiet nicht spezifiziert",
+      "orac": {
+        "wert": null,
+        "einheit": "µmol TE/100 g",
+        "datenqualitaet": "Keine belastbare, eindeutig passende Angabe in diesem Datensatz; nicht als 0 interpretieren"
+      },
+      "polyphenole": {
+        "gruppen": [
+          "Anthocyane",
+          "Flavonole",
+          "Phenolsäuren",
+          "Proanthocyanidine"
+        ],
+        "einzelstoffe": [
+          {
+            "name": "Malvidin-Glykoside",
+            "status": "in Heidelbeeren beschrieben; Mengen sortenabhängig"
+          },
+          {
+            "name": "Delphinidin-Glykoside",
+            "status": "in Heidelbeeren beschrieben; Mengen sortenabhängig"
+          },
+          {
+            "name": "Petunidin-Glykoside",
+            "status": "in Heidelbeeren beschrieben; Mengen sortenabhängig"
+          },
+          {
+            "name": "Cyanidin- und Peonidin-Glykoside",
+            "status": "in Heidelbeeren beschrieben"
+          },
+          {
+            "name": "Chlorogensäure",
+            "status": "Phenolsäure; in Heidelbeeren beschrieben"
+          },
+          {
+            "name": "Quercetin-Glykoside",
+            "status": "Flavonole; in Heidelbeeren beschrieben"
+          }
+        ]
+      },
+      "bioverfuegbarkeit": {
+        "bewertung": "Unzureichende Datenlage für eine pauschale Einstufung des gesamten Lebensmittels",
+        "aufnahme_darm": "Anthocyane werden teilweise aufgenommen; ein erheblicher Anteil erreicht den Dickdarm. Aufnahme hängt von Verbindung, Lebensmittelmatrix und Person ab.",
+        "stoffwechsel": "Umwandlung durch menschliche Enzyme und Darmmikrobiom; einzelne Stoffwechselwege sind für die gesamte Beere nicht einheitlich quantifizierbar.",
+        "metaboliten": [
+          "Kleinere phenolische Metaboliten; konkrete Profile sind dosis- und mikrobiomabhängig"
+        ],
+        "darmmikrobiom": "Mikrobielle Umwandlung von Anthocyanen ist beschrieben; keine pauschale individuelle Wirkung ableitbar.",
+        "zubereitung": "Frisch, tiefgekühlt, erhitzt und getrocknet getrennt bewerten; Sorte und Lagerung beeinflussen Polyphenolgehalte.",
+        "synergien": [],
+        "antagonisten": [],
+        "evidenzhinweis": "Allgemeine Anthocyanin-Befunde sind nicht automatisch ein spezifischer Nachweis für jede Heidelbeersorte."
+      },
+      "naehrstoffe": {
+        "vitamine": null,
+        "mineralstoffe": null,
+        "protein_g_100g": null,
+        "ballaststoffe_g_100g": null,
+        "energie_kcal_100g": null,
+        "fett_g_100g": null
+      },
+      "quellen": [
+        {
+          "kurzbeleg": "Yan et al., 2023, Critical Reviews in Food Science and Nutrition",
+          "pmid": "34766521",
+          "doi": "10.1080/10408398.2021.1990849",
+          "verwendung": "Vergleich phenolischer Profile kleiner Früchte"
+        },
+        {
+          "kurzbeleg": "Red Fruits Composition and Their Health Benefits—A Review, 2022",
+          "pmcid": "PMC8909293",
+          "verwendung": "Polyphenolprofile und Anthocyanin-Übersicht"
+        }
+      ]
+    },
+    {
+      "id": "berry_002",
+      "name_de": "Wilde Heidelbeeren (Blaubeeren)",
+      "name_en": "Bilberries",
+      "wissenschaftlicher_name": "Vaccinium myrtillus",
+      "kategorie": "Beeren",
+      "lebensmittelzustand": "roh, frisch; Herkunft und Sorte nicht spezifiziert",
+      "orac": {
+        "wert": null,
+        "einheit": "µmol TE/100 g",
+        "datenqualitaet": "Keine belastbare, eindeutig passende Angabe in diesem Datensatz; nicht als 0 interpretieren"
+      },
+      "polyphenole": {
+        "gruppen": [
+          "Anthocyane",
+          "Phenolsäuren",
+          "Flavonole"
+        ],
+        "einzelstoffe": [
+          {
+            "name": "Delphinidin-Glykoside",
+            "status": "charakteristische Anthocyanidine der Wildheidelbeere"
+          },
+          {
+            "name": "Cyanidin-Glykoside",
+            "status": "charakteristische Anthocyanidine der Wildheidelbeere"
+          },
+          {
+            "name": "Petunidin-, Peonidin- und Malvidin-Glykoside",
+            "status": "in Wildheidelbeeren beschrieben"
+          },
+          {
+            "name": "Chlorogensäure",
+            "status": "Phenolsäure; in Wildheidelbeeren beschrieben"
+          },
+          {
+            "name": "Quercetin-Derivate",
+            "status": "Flavonole; in Wildheidelbeeren beschrieben"
+          }
+        ]
+      },
+      "bioverfuegbarkeit": {
+        "bewertung": "Unzureichende Datenlage für eine pauschale Einstufung des gesamten Lebensmittels",
+        "aufnahme_darm": "Anthocyane weisen insgesamt eine begrenzte und variable systemische Bioverfügbarkeit auf.",
+        "stoffwechsel": "Anthocyane können im Verdauungstrakt chemisch und mikrobiell umgewandelt werden.",
+        "metaboliten": [
+          "Kleinere phenolische Abbauprodukte; Bilberry-spezifische quantitative Human-Daten hier nicht hinterlegt"
+        ],
+        "darmmikrobiom": "In-vitro-Modelle zeigen mikrobielle Beteiligung am Anthocyaninabbau; daraus folgt keine gesicherte klinische Wirkung.",
+        "zubereitung": "Frisch, tiefgekühlt und verarbeitet getrennt untersuchen.",
+        "synergien": [],
+        "antagonisten": [],
+        "evidenzhinweis": "Nicht mit Kulturheidelbeeren gleichsetzen; botanische Art und Polyphenolprofil unterscheiden sich."
+      },
+      "naehrstoffe": {
+        "vitamine": null,
+        "mineralstoffe": null,
+        "protein_g_100g": null,
+        "ballaststoffe_g_100g": null,
+        "energie_kcal_100g": null,
+        "fett_g_100g": null
+      },
+      "quellen": [
+        {
+          "kurzbeleg": "Yan et al., 2023, Critical Reviews in Food Science and Nutrition",
+          "pmid": "34766521",
+          "doi": "10.1080/10408398.2021.1990849",
+          "verwendung": "Vergleich phenolischer Profile kleiner Früchte"
+        },
+        {
+          "kurzbeleg": "Spontaneous and Microbiota-Driven Degradation of Anthocyanins in an In Vitro Human Colon Model, 2023",
+          "pmid": "37525336",
+          "verwendung": "In-vitro-Befunde zum Anthocyaninabbau; keine direkte Human-Bioverfügbarkeitsmessung"
+        }
+      ]
+    },
+    {
+      "id": "berry_003",
+      "name_de": "Erdbeeren",
+      "name_en": "Strawberries",
+      "wissenschaftlicher_name": "Fragaria × ananassa",
+      "kategorie": "Beeren",
+      "lebensmittelzustand": "roh, frisch; Sorte nicht spezifiziert",
+      "orac": {
+        "wert": null,
+        "einheit": "µmol TE/100 g",
+        "datenqualitaet": "Keine belastbare, eindeutig passende Angabe in diesem Datensatz; nicht als 0 interpretieren"
+      },
+      "polyphenole": {
+        "gruppen": [
+          "Anthocyane",
+          "Ellagitannine",
+          "Flavonole",
+          "Phenolsäuren"
+        ],
+        "einzelstoffe": [
+          {
+            "name": "Pelargonidin-3-glucosid",
+            "status": "wichtiges Erdbeer-Anthocyanin"
+          },
+          {
+            "name": "Ellagitannine",
+            "status": "in Erdbeeren beschrieben; Gehalt sorten- und methodenabhängig"
+          },
+          {
+            "name": "Ellagsäure",
+            "status": "kann auch aus Ellagitanninen freigesetzt werden"
+          },
+          {
+            "name": "Quercetin-Derivate",
+            "status": "Flavonole; in Erdbeeren beschrieben"
+          },
+          {
+            "name": "Hydroxyzimtsäuren",
+            "status": "Phenolsäuregruppe; Zusammensetzung variabel"
+          }
+        ]
+      },
+      "bioverfuegbarkeit": {
+        "bewertung": "Unzureichende Datenlage für eine pauschale Einstufung des gesamten Lebensmittels",
+        "aufnahme_darm": "Die Bioverfügbarkeit unterscheidet sich nach Polyphenolklasse; keine gemeinsame Bewertung für alle Erdbeer-Polyphenole.",
+        "stoffwechsel": "Ellagitannine können im Darm zu Ellagsäure und anschließend durch Darmmikroben zu Urolithinen umgewandelt werden; Fähigkeit zur Urolithinbildung variiert zwischen Personen.",
+        "metaboliten": [
+          "Ellagsäure",
+          "Urolithine (mikrobiomabhängig)"
+        ],
+        "darmmikrobiom": "Die Bildung von Urolithinen hängt von der individuellen mikrobiellen Ausstattung ab.",
+        "zubereitung": "Frische, Lagerung, Pürieren und Erhitzen können Stabilität und Gehalt verändern; getrennte Daten erforderlich.",
+        "synergien": [],
+        "antagonisten": [],
+        "evidenzhinweis": "Urolithinbildung ist ein Stoffwechselweg von Ellagitanninen, aber kein garantierter Effekt bei jeder Person."
+      },
+      "naehrstoffe": {
+        "vitamine": null,
+        "mineralstoffe": null,
+        "protein_g_100g": null,
+        "ballaststoffe_g_100g": null,
+        "energie_kcal_100g": null,
+        "fett_g_100g": null
+      },
+      "quellen": [
+        {
+          "kurzbeleg": "Yan et al., 2023, Critical Reviews in Food Science and Nutrition",
+          "pmid": "34766521",
+          "doi": "10.1080/10408398.2021.1990849",
+          "verwendung": "Phenolische Profile einschließlich Erdbeeren"
+        },
+        {
+          "kurzbeleg": "Bezerra et al., 2024, Comprehensive Reviews in Food Science and Food Safety",
+          "doi": "10.1111/1541-4337.13354",
+          "verwendung": "Vergleichende Übersicht zu Erdbeeren, Himbeeren und Heidelbeeren"
+        }
+      ]
+    },
+    {
+      "id": "berry_004",
+      "name_de": "Himbeeren",
+      "name_en": "Raspberries",
+      "wissenschaftlicher_name": "Rubus idaeus",
+      "kategorie": "Beeren",
+      "lebensmittelzustand": "roh, frisch; Sorte nicht spezifiziert",
+      "orac": {
+        "wert": null,
+        "einheit": "µmol TE/100 g",
+        "datenqualitaet": "Keine belastbare, eindeutig passende Angabe in diesem Datensatz; nicht als 0 interpretieren"
+      },
+      "polyphenole": {
+        "gruppen": [
+          "Anthocyane",
+          "Ellagitannine",
+          "Flavonole",
+          "Phenolsäuren"
+        ],
+        "einzelstoffe": [
+          {
+            "name": "Cyanidin-basierte Anthocyane",
+            "status": "wichtige Anthocyanin-Gruppe in roten Himbeeren"
+          },
+          {
+            "name": "Cyanidin-3-sophorosid",
+            "status": "als charakteristisches Himbeer-Anthocyanin beschrieben"
+          },
+          {
+            "name": "Ellagitannine",
+            "status": "wichtige Polyphenolgruppe"
+          },
+          {
+            "name": "Ellagsäure",
+            "status": "kann aus Ellagitanninen freigesetzt werden"
+          },
+          {
+            "name": "Quercetin- und Kaempferol-Derivate",
+            "status": "Flavonole; in Himbeeren beschrieben"
+          }
+        ]
+      },
+      "bioverfuegbarkeit": {
+        "bewertung": "Unzureichende Datenlage für eine pauschale Einstufung des gesamten Lebensmittels",
+        "aufnahme_darm": "Anthocyane werden nur teilweise als intakte Verbindungen aufgenommen; ein Teil erreicht den Dickdarm.",
+        "stoffwechsel": "Ellagitannine können zu Ellagsäure und bei bestimmten Mikrobiom-Konstellationen zu Urolithinen umgewandelt werden.",
+        "metaboliten": [
+          "Kleinere phenolische Metaboliten aus Anthocyanen",
+          "Urolithine (mikrobiomabhängig)"
+        ],
+        "darmmikrobiom": "Mikrobielle Umwandlung ist relevant; individuelle Unterschiede sind zu erwarten.",
+        "zubereitung": "Frisch, tiefgekühlt, erhitzt und getrocknet getrennt bewerten.",
+        "synergien": [],
+        "antagonisten": [],
+        "evidenzhinweis": "Humanbefunde zu einzelnen Himbeerbestandteilen nicht auf alle Sorten und Zubereitungen übertragen."
+      },
+      "naehrstoffe": {
+        "vitamine": null,
+        "mineralstoffe": null,
+        "protein_g_100g": null,
+        "ballaststoffe_g_100g": null,
+        "energie_kcal_100g": null,
+        "fett_g_100g": null
+      },
+      "quellen": [
+        {
+          "kurzbeleg": "Yan et al., 2023, Critical Reviews in Food Science and Nutrition",
+          "pmid": "34766521",
+          "doi": "10.1080/10408398.2021.1990849",
+          "verwendung": "Phenolische Profile kleiner Früchte"
+        },
+        {
+          "kurzbeleg": "Bezerra et al., 2024, Comprehensive Reviews in Food Science and Food Safety",
+          "doi": "10.1111/1541-4337.13354",
+          "verwendung": "Himbeer-Anthocyane und Ellagitannine"
+        }
+      ]
+    },
+    {
+      "id": "berry_005",
+      "name_de": "Brombeeren",
+      "name_en": "Blackberries",
+      "wissenschaftlicher_name": "Rubus fruticosus agg.",
+      "kategorie": "Beeren",
+      "lebensmittelzustand": "roh, frisch; Artengruppe und Sorte nicht spezifiziert",
+      "orac": {
+        "wert": null,
+        "einheit": "µmol TE/100 g",
+        "datenqualitaet": "Keine belastbare, eindeutig passende Angabe in diesem Datensatz; nicht als 0 interpretieren"
+      },
+      "polyphenole": {
+        "gruppen": [
+          "Anthocyane",
+          "Ellagitannine",
+          "Flavonole",
+          "Phenolsäuren"
+        ],
+        "einzelstoffe": [
+          {
+            "name": "Cyanidin-3-glucosid",
+            "status": "wichtiges Brombeer-Anthocyanin"
+          },
+          {
+            "name": "Weitere Cyanidin-Glykoside",
+            "status": "in Brombeeren beschrieben"
+          },
+          {
+            "name": "Ellagitannine",
+            "status": "in Brombeeren beschrieben; Art- und sortenabhängig"
+          },
+          {
+            "name": "Ellagsäure",
+            "status": "Phenolische Verbindung; kann aus Ellagitanninen entstehen"
+          },
+          {
+            "name": "Quercetin-Derivate",
+            "status": "Flavonole; in Brombeeren beschrieben"
+          }
+        ]
+      },
+      "bioverfuegbarkeit": {
+        "bewertung": "Unzureichende Datenlage für eine pauschale Einstufung des gesamten Lebensmittels",
+        "aufnahme_darm": "Anthocyane zeigen begrenzte und variable Aufnahme als intakte Moleküle.",
+        "stoffwechsel": "Anthocyane werden teilweise zu kleineren Phenolsäuren abgebaut; Ellagitannine können über Ellagsäure zu Urolithinen führen.",
+        "metaboliten": [
+          "Kleinere phenolische Metaboliten",
+          "Urolithine (mikrobiomabhängig)"
+        ],
+        "darmmikrobiom": "Das Mikrobiom beeinflusst den Abbau; die resultierenden Metabolitenprofile variieren individuell.",
+        "zubereitung": "Frisch, tiefgekühlt und verarbeitet getrennt erfassen; Sorte und Reifegrad berücksichtigen.",
+        "synergien": [],
+        "antagonisten": [],
+        "evidenzhinweis": "Zusammensetzung und Gehalte variieren stark nach Art, Sorte und Messverfahren."
+      },
+      "naehrstoffe": {
+        "vitamine": null,
+        "mineralstoffe": null,
+        "protein_g_100g": null,
+        "ballaststoffe_g_100g": null,
+        "energie_kcal_100g": null,
+        "fett_g_100g": null
+      },
+      "quellen": [
+        {
+          "kurzbeleg": "Yan et al., 2023, Critical Reviews in Food Science and Nutrition",
+          "pmid": "34766521",
+          "doi": "10.1080/10408398.2021.1990849",
+          "verwendung": "Phenolische Profile kleiner Früchte"
+        },
+        {
+          "kurzbeleg": "Red Fruits Composition and Their Health Benefits—A Review, 2022",
+          "pmcid": "PMC8909293",
+          "verwendung": "Anthocyanin- und Phenolsäureprofile"
+        }
+      ]
+    }
+  ],
+  "gemeinsame_bioverfuegbarkeitsquelle": [
+    {
+      "kurzbeleg": "Liang et al., 2024, Anthocyanins-gut microbiota-health axis: A review",
+      "pmid": "36927343",
+      "doi": "10.1080/10408398.2023.2187212"
+    },
+    {
+      "kurzbeleg": "Kumkum et al., 2024, Bioavailability of Anthocyanins: Whole Foods versus Extracts",
+      "pmid": "38794640",
+      "pmcid": "PMC11123854",
+      "doi": "10.3390/nu16101403"
+    }
+  ]
+}
