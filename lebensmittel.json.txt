@@ -1,0 +1,110 @@
+{
+  "version": "1.0",
+  "sprache": ["de", "en"],
+  "lebensmittel": [
+    {
+      "id": "berry_001",
+      "name_de": "Heidelbeeren",
+      "name_en": "Blueberries",
+      "kategorie": "Beeren",
+      "orac": {
+        "wert": 4669,
+        "einheit": "µmol TE/100 g",
+        "datenqualitaet": "Vorläufiger Beispielwert"
+      },
+      "polyphenole": {
+        "gruppen": ["Anthocyane", "Flavonole", "Phenolsäuren"],
+        "einzelstoffe": []
+      },
+      "bioverfuegbarkeit": {
+        "bewertung": "Unzureichende Datenlage",
+        "aufnahme_darm": "Noch zu ergänzen",
+        "stoffwechsel": "Noch zu ergänzen",
+        "metaboliten": "Noch zu ergänzen",
+        "darmmikrobiom": "Noch zu ergänzen",
+        "zubereitung": "Frisch, tiefgekühlt und verarbeitet getrennt untersuchen",
+        "synergien": [],
+        "antagonisten": []
+      },
+      "quellen": []
+    },
+    {
+      "id": "vegetable_001",
+      "name_de": "Spinat",
+      "name_en": "Spinach",
+      "kategorie": "Gemüse",
+      "orac": {
+        "wert": 1513,
+        "einheit": "µmol TE/100 g",
+        "datenqualitaet": "Vorläufiger Beispielwert"
+      },
+      "polyphenole": {
+        "gruppen": ["Flavonoide", "Phenolsäuren"],
+        "einzelstoffe": []
+      },
+      "bioverfuegbarkeit": {
+        "bewertung": "Unzureichende Datenlage",
+        "aufnahme_darm": "Noch zu ergänzen",
+        "stoffwechsel": "Noch zu ergänzen",
+        "metaboliten": "Noch zu ergänzen",
+        "darmmikrobiom": "Noch zu ergänzen",
+        "zubereitung": "Roh und gegart getrennt untersuchen",
+        "synergien": [],
+        "antagonisten": []
+      },
+      "quellen": []
+    },
+    {
+      "id": "herb_001",
+      "name_de": "Petersilie",
+      "name_en": "Parsley",
+      "kategorie": "Kräuter",
+      "orac": {
+        "wert": 10500,
+        "einheit": "µmol TE/100 g",
+        "datenqualitaet": "Vorläufiger Beispielwert"
+      },
+      "polyphenole": {
+        "gruppen": ["Flavone", "Phenolsäuren"],
+        "einzelstoffe": []
+      },
+      "bioverfuegbarkeit": {
+        "bewertung": "Unzureichende Datenlage",
+        "aufnahme_darm": "Noch zu ergänzen",
+        "stoffwechsel": "Noch zu ergänzen",
+        "metaboliten": "Noch zu ergänzen",
+        "darmmikrobiom": "Noch zu ergänzen",
+        "zubereitung": "Frisch und getrocknet getrennt untersuchen",
+        "synergien": [],
+        "antagonisten": []
+      },
+      "quellen": []
+    },
+    {
+      "id": "fruit_001",
+      "name_de": "Avocado",
+      "name_en": "Avocado",
+      "kategorie": "Obst",
+      "orac": {
+        "wert": 1050,
+        "einheit": "µmol TE/100 g",
+        "datenqualitaet": "Vorläufiger Beispielwert"
+      },
+      "polyphenole": {
+        "gruppen": ["Phenolsäuren", "Weitere phenolische Verbindungen"],
+        "einzelstoffe": []
+      },
+      "bioverfuegbarkeit": {
+        "bewertung": "Unzureichende Datenlage",
+        "aufnahme_darm": "Noch zu ergänzen",
+        "stoffwechsel": "Noch zu ergänzen",
+        "metaboliten": "Noch zu ergänzen",
+        "darmmikrobiom": "Noch zu ergänzen",
+        "zubereitung": "Reifegrad und Verarbeitung berücksichtigen",
+        "synergien": [],
+        "antagonisten": []
+      },
+      "quellen": []
+    }
+  ]
+}
