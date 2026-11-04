@@ -213,17 +213,24 @@ let foods = {};
 
 async function loadFoodDatabase() {
     try {
-        const response = await fetch("lebensmittel.json");
+        const [response1, response2] = await Promise.all([
+            fetch("lebensmittel.json"),
+            fetch("beeren_01_erste_5_v2.json")
+        ]);
 
-        if (!response.ok) {
-            throw new Error("Datenbank konnte nicht geladen werden.");
+        if (!response1.ok || !response2.ok) {
+            throw new Error("Eine Datenbank konnte nicht geladen werden.");
         }
 
-        const database = await response.json();
+        const database1 = await response1.json();
+        const database2 = await response2.json();
 
-        database.lebensmittel.forEach(food => {
-            foods[food.id] = food;
-        });
+        foods = {};
+
+        [...database1.lebensmittel, ...database2.lebensmittel]
+            .forEach(food => {
+                foods[food.id] = food;
+            });
 
         updateFoodList();
 
@@ -232,7 +239,6 @@ async function loadFoodDatabase() {
         alert("Die Lebensmitteldatenbank konnte nicht geladen werden.");
     }
 }
-
 function updateFoodList() {
     const select = document.getElementById("food");
 
@@ -333,11 +339,7 @@ function createInfo(text) {
 function addFood() {
 
     let value = document.getElementById("food").value;
-
-    let grams = Number(
-        document.getElementById("grams").value
-    );
-
+    let grams = Number(document.getElementById("grams").value);
     let food = foods[value];
 
     if (!food) {
@@ -350,36 +352,18 @@ function addFood() {
         return;
     }
 
-    getEntries().push({
+    let oracValue = food.orac.wert;
 
+    getEntries().push({
         id: food.id,
         name: food.name_de,
         grams: grams,
-
-        orac: food.orac.wert * grams / 100
-
+        orac: oracValue === null ? null : oracValue * grams / 100
     });
 
     save();
     render();
-
 }
-    getEntries().push({
-
-        name: foods[value].name,
-
-        grams: grams,
-
-        orac: Number(value) * grams / 100
-
-    });
-
-    save();
-
-    render();
-
-}
-
 
 function removeFood(index) {
 
@@ -395,14 +379,14 @@ function removeFood(index) {
 function render() {
 
     let entries = getEntries();
-
     let total = 0;
-
     let html = "";
 
     entries.forEach((item, index) => {
 
-        total += item.orac;
+        if (item.orac !== null) {
+            total += item.orac;
+        }
 
         html += `
         <div class="entry">
@@ -410,7 +394,10 @@ function render() {
             <strong>${item.name}</strong><br>
 
             ${item.grams} g –
-            ${Math.round(item.orac)} µmol TE
+
+            ${item.orac === null
+                ? "ORAC-Wert nicht verfügbar"
+                : Math.round(item.orac).toLocaleString("de-DE") + " µmol TE"}
 
             <button onclick="removeFood(${index})">
                 Entfernen
@@ -421,20 +408,13 @@ function render() {
 
     });
 
-
     document.getElementById("entries").innerHTML =
         html || "Noch keine Lebensmittel eingetragen.";
-
 
     document.getElementById("total").innerText =
         Math.round(total).toLocaleString("de-DE");
 
 }
-
-
-render();
-
-loadFoodDatabase();
 
 </script>
 
