@@ -120,7 +120,10 @@ Deine persönliche Antioxidantien- und Ernährungsübersicht
 <div class="total" id="total">0</div>
 
 <p style="text-align:center">
-µmol TE – geschätzter ORAC-Tageswert
+µmol TE – ORAC-Tagesgesamtwert
+</p>
+<p style="text-align:center; margin-bottom:0">
+Gesamte Lebensmittelmenge: <strong id="totalGrams">0 g</strong>
 </p>
 </div>
 
@@ -377,35 +380,33 @@ function removeFood(index) {
 
 
 function render() {
-
     let entries = getEntries();
     let total = 0;
+    let totalGrams = 0;
     let html = "";
 
     entries.forEach((item, index) => {
+        const grams = Number(item.grams) || 0;
+        totalGrams += grams;
 
-        if (item.orac !== null) {
+        // Nur vorhandene numerische ORAC-Werte werden addiert.
+        if (typeof item.orac === "number" && Number.isFinite(item.orac)) {
             total += item.orac;
         }
 
+        const oracText =
+            typeof item.orac === "number" && Number.isFinite(item.orac)
+                ? Math.round(item.orac).toLocaleString("de-DE") + " µmol TE"
+                : "ORAC-Wert nicht verfügbar";
+
         html += `
         <div class="entry">
-
             <strong>${item.name}</strong><br>
-
-            ${item.grams} g –
-
-            ${item.orac === null
-                ? "ORAC-Wert nicht verfügbar"
-                : Math.round(item.orac).toLocaleString("de-DE") + " µmol TE"}
-
-            <button onclick="removeFood(${index})">
-                Entfernen
-            </button>
-
+            Verzehrte Menge: ${grams.toLocaleString("de-DE")} g<br>
+            ORAC-Beitrag: ${oracText}
+            <button onclick="removeFood(${index})">Entfernen</button>
         </div>
         `;
-
     });
 
     document.getElementById("entries").innerHTML =
@@ -414,6 +415,8 @@ function render() {
     document.getElementById("total").innerText =
         Math.round(total).toLocaleString("de-DE");
 
+    document.getElementById("totalGrams").innerText =
+        totalGrams.toLocaleString("de-DE") + " g";
 }
 
 </script>
