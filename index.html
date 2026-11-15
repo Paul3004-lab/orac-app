@@ -4,422 +4,267 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meine ORAC-App</title>
-
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f1f5f2;
-    margin: 0;
-    padding: 20px;
-    color: #26352b;
-}
-
-.container {
-    max-width: 650px;
-    margin: auto;
-}
-
-h1 {
-    color: #247344;
-    text-align: center;
-}
-
-h2 {
-    color: #286b43;
-}
-
-h3 {
-    margin-bottom: 5px;
-    color: #386c4b;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 14px;
-    box-shadow: 0 2px 8px #0001;
-}
-
-input, select, button {
-    width: 100%;
-    padding: 13px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-button {
-    background: #27834b;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.total {
-    font-size: 30px;
-    font-weight: bold;
-    color: #27834b;
-    text-align: center;
-}
-
-.small {
-    color: #777;
-    font-size: 13px;
-}
-
-.entry {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-}
-
-.info-row {
-    padding: 10px 0;
-    border-bottom: 1px solid #e5eee7;
-}
-
-.info-label {
-    font-weight: bold;
-    color: #386c4b;
-}
-
-.status {
-    display: inline-block;
-    background: #f1f3e9;
-    padding: 5px 9px;
-    border-radius: 6px;
-    font-size: 13px;
-    margin-top: 5px;
-}
-
-.section-note {
-    background: #f1f7f2;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
+body{font-family:Arial,sans-serif;background:#f1f5f2;margin:0;padding:20px;color:#26352b}
+.container{max-width:650px;margin:auto}
+h1{color:#247344;text-align:center} h2{color:#286b43}
+h3{margin-bottom:5px;color:#386c4b}
+.card{background:white;padding:20px;margin:15px 0;border-radius:14px;box-shadow:0 2px 8px #0001}
+input,select,button{width:100%;padding:13px;margin:8px 0;box-sizing:border-box;border-radius:8px;font-size:16px}
+button{background:#27834b;color:white;border:none;cursor:pointer}
+button.secondary{background:#68786d}
+.total{font-size:30px;font-weight:bold;color:#27834b;text-align:center}
+.small{color:#777;font-size:13px}
+.entry{border-bottom:1px solid #ddd;padding:10px 0}
+.info-row{padding:10px 0;border-bottom:1px solid #e5eee7;line-height:1.5}
+.status{display:inline-block;background:#f1f3e9;padding:5px 9px;border-radius:6px;font-size:13px;margin-top:5px}
+.section-note{background:#f1f7f2;padding:12px;border-radius:8px;font-size:14px;line-height:1.5}
+#dbStatus{font-size:13px;color:#55705d}
 </style>
 </head>
-
 <body>
-
 <div class="container">
-
 <h1>🍇 Meine ORAC-App</h1>
-
-<p style="text-align:center">
-Deine persönliche Antioxidantien- und Ernährungsübersicht
-</p>
+<p style="text-align:center">Deine persönliche Antioxidantien- und Ernährungsübersicht</p>
 
 <div class="card">
 <h2>📊 Meine Tagesbilanz</h2>
-
 <div class="total" id="total">0</div>
-
-<p style="text-align:center">
-µmol TE – ORAC-Tagesgesamtwert
-</p>
-<p style="text-align:center; margin-bottom:0">
-Gesamte Lebensmittelmenge: <strong id="totalGrams">0 g</strong>
-</p>
+<p style="text-align:center">µmol TE – ORAC-Tagesgesamtwert</p>
+<p style="text-align:center;margin-bottom:0">Gesamte Lebensmittelmenge: <strong id="totalGrams">0 g</strong></p>
+<p id="dbStatus" aria-live="polite">Lebensmitteldatenbank wird geladen …</p>
 </div>
 
-
 <div class="card">
-
 <h2>🥑 Lebensmittel hinzufügen</h2>
-
-<label>Lebensmittel auswählen</label>
-
-<select id="food" onchange="renderFoodInfo()">
-<option value="4669">Heidelbeeren</option>
-<option value="1513">Spinat</option>
-<option value="10500">Petersilie</option>
-<option value="1050">Avocado</option>
+<label for="food">Lebensmittel auswählen</label>
+<select id="food" disabled>
+<option value="">Datenbank wird geladen …</option>
 </select>
-
-<label>Verzehrte Menge in Gramm</label>
-
-<input type="number" id="grams" value="100" min="1">
-
-<button onclick="addFood()">
-+ Lebensmittel hinzufügen
-</button>
-
-<p class="small">
-Die hinterlegten ORAC-Zahlen sind vorläufige
-Beispielwerte und müssen anhand zuverlässiger
-Quellen überprüft werden.
-</p>
-
+<label for="grams">Verzehrte Menge in Gramm</label>
+<input type="number" id="grams" value="100" min="1" step="1">
+<button id="addButton" type="button" disabled>+ Lebensmittel hinzufügen</button>
+<p class="small">ORAC-Werte sind methoden- und lebensmittelabhängig. Vorläufige Beispielwerte sind ausdrücklich gekennzeichnet. Fehlende Werte werden nicht als 0 behandelt.</p>
 </div>
 
-
 <div class="card">
-
 <h2>🔬 Inhaltsstoffe und Bioverfügbarkeit</h2>
-
-<h3>Polyphenole</h3>
-
-<div id="polyphenolInfo"></div>
-
-<h3>Bioverfügbarkeit</h3>
-
-<div id="bioInfo"></div>
-
-<h3>Stoffwechsel und Metaboliten</h3>
-
-<div id="metabolismInfo"></div>
-
-<h3>Darmmikrobiom</h3>
-
-<div id="microbiomeInfo"></div>
-
-<h3>Zubereitung und Aufnahme</h3>
-
-<div id="preparationInfo"></div>
-
-<h3>Synergien und Antagonisten</h3>
-
-<div id="synergyInfo"></div>
-
-<h3>Wissenschaftliche Datenlage</h3>
-
-<div id="qualityInfo"></div>
-
-<p class="section-note">
-Die Informationen werden schrittweise anhand
-wissenschaftlicher Untersuchungen ergänzt.
-Fehlende Messwerte werden nicht geschätzt.
-</p>
-
+<h3>Polyphenole</h3><div id="polyphenolInfo">Bitte zuerst ein Lebensmittel auswählen.</div>
+<h3>Bioverfügbarkeit</h3><div id="bioInfo"></div>
+<h3>Stoffwechsel und Metaboliten</h3><div id="metabolismInfo"></div>
+<h3>Darmmikrobiom</h3><div id="microbiomeInfo"></div>
+<h3>Zubereitung und Aufnahme</h3><div id="preparationInfo"></div>
+<h3>Synergien und Antagonisten</h3><div id="synergyInfo"></div>
+<h3>Wissenschaftliche Datenlage</h3><div id="qualityInfo"></div>
+<div class="section-note">Die Informationen werden schrittweise anhand wissenschaftlicher Untersuchungen ergänzt. Fehlende Messwerte werden nicht geschätzt.</div>
 </div>
-
 
 <div class="card">
-
 <h2>📋 Heute gegessen</h2>
-
 <div id="entries"></div>
-
 </div>
-
 </div>
-
 
 <script>
+"use strict";
 
 let foods = {};
+let data = {};
+try {
+    data = JSON.parse(localStorage.getItem("oracData") || "{}");
+    if (!data || typeof data !== "object" || Array.isArray(data)) data = {};
+} catch (error) {
+    console.warn("Gespeicherte Tagesdaten konnten nicht gelesen werden:", error);
+    data = {};
+}
 
-async function loadFoodDatabase() {
-    try {
-        const [response1, response2] = await Promise.all([
-            fetch("lebensmittel.json"),
-            fetch("beeren_01_erste_5_v2.json")
-        ]);
-
-        if (!response1.ok || !response2.ok) {
-            throw new Error("Eine Datenbank konnte nicht geladen werden.");
-        }
-
-        const database1 = await response1.json();
-        const database2 = await response2.json();
-
-        foods = {};
-
-        [...database1.lebensmittel, ...database2.lebensmittel]
-            .forEach(food => {
-                foods[food.id] = food;
-            });
-
-        updateFoodList();
-
-    } catch (error) {
-        console.error(error);
-        alert("Die Lebensmitteldatenbank konnte nicht geladen werden.");
-    }
+function today() {
+    const d = new Date();
+    return [d.getFullYear(), String(d.getMonth()+1).padStart(2,"0"), String(d.getDate()).padStart(2,"0")].join("-");
+}
+function getEntries() {
+    if (!Array.isArray(data[today()])) data[today()] = [];
+    return data[today()];
+}
+function save() {
+    localStorage.setItem("oracData", JSON.stringify(data));
+}
+function asText(value) {
+    if (value === null || value === undefined || value === "") return "Keine Angabe hinterlegt.";
+    if (Array.isArray(value)) return value.length ? value.join(", ") : "Keine Angaben hinterlegt.";
+    if (typeof value === "object") return JSON.stringify(value);
+    return String(value);
+}
+function setInfo(id, value, label) {
+    const el = document.getElementById(id);
+    el.textContent = "";
+    const row = document.createElement("div");
+    row.className = "info-row";
+    row.append(document.createTextNode(asText(value)));
+    const br = document.createElement("br");
+    const badge = document.createElement("span");
+    badge.className = "status";
+    badge.textContent = label || "Information gemäß Datenbank";
+    row.append(br, badge);
+    el.appendChild(row);
+}
+function renderFoodInfo() {
+    const food = foods[document.getElementById("food").value];
+    if (!food) return;
+    const poly = food.polyphenole || {};
+    const bio = food.bioverfuegbarkeit || {};
+    setInfo("polyphenolInfo", poly.gruppen || poly.einzelstoffe || null, "Polyphenolgruppen");
+    setInfo("bioInfo", bio.bewertung, "Bewertung der Bioverfügbarkeit");
+    setInfo("metabolismInfo", bio.stoffwechsel || bio.metaboliten, "Stoffwechsel / Metaboliten");
+    setInfo("microbiomeInfo", bio.darmmikrobiom, "Darmmikrobiom");
+    setInfo("preparationInfo", bio.zubereitung || bio.aufnahme_darm, "Zubereitung / Aufnahme");
+    const synergy = "Synergien: " + asText(bio.synergien) + " | Antagonisten: " + asText(bio.antagonisten);
+    setInfo("synergyInfo", synergy, "Interaktionen – soweit dokumentiert");
+    const orac = food.orac || {};
+    setInfo("qualityInfo", orac.datenqualitaet || "Keine ORAC-Datenqualitätsangabe hinterlegt.", "ORAC-Datenqualität");
 }
 function updateFoodList() {
     const select = document.getElementById("food");
+    select.replaceChildren();
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Lebensmittel auswählen";
+    select.appendChild(placeholder);
 
-    select.innerHTML = "";
-
-    Object.entries(foods).forEach(([id, food]) => {
+    Object.values(foods).sort((a,b) => (a.name_de || "").localeCompare(b.name_de || "", "de")).forEach(food => {
         const option = document.createElement("option");
-
-        option.value = id;
-        option.textContent = food.name_de + " / " + food.name_en;
-
+        option.value = food.id;
+        option.textContent = (food.name_de || food.id) + " / " + (food.name_en || "");
         select.appendChild(option);
     });
-
-    renderFoodInfo();
+    select.disabled = false;
+    document.getElementById("addButton").disabled = false;
+    select.addEventListener("change", renderFoodInfo);
+    document.getElementById("dbStatus").textContent = Object.keys(foods).length + " Lebensmittel geladen.";
 }
+async function loadFoodDatabase() {
+    try {
+        const [response1, response2] = await Promise.all([
+            fetch("./lebensmittel.json"),
+            fetch("./beeren_01_erste_5.json")
+        ]);
+        if (!response1.ok) throw new Error("lebensmittel.json: HTTP " + response1.status);
+        if (!response2.ok) throw new Error("beeren_01_erste_5.json: HTTP " + response2.status);
 
-let data = JSON.parse(
-    localStorage.getItem("oracData") || "{}"
-);
+        const [database1, database2] = await Promise.all([response1.json(), response2.json()]);
+        if (!Array.isArray(database1.lebensmittel) || !Array.isArray(database2.lebensmittel)) {
+            throw new Error("In einer JSON-Datei fehlt das Feld 'lebensmittel'.");
+        }
 
+        foods = {};
+        // Zuerst die Grunddaten übernehmen.
+        database1.lebensmittel.forEach(food => { foods[food.id] = food; });
 
-function today() {
-    return new Date().toLocaleDateString("sv-SE");
-}
+        // Die ausführlicheren Beerenprofile ergänzen. Bei gleicher ID bleiben
+        // vorhandene ORAC-Werte aus der Grunddatei erhalten, wenn der neue Wert null ist.
+        database2.lebensmittel.forEach(food => {
+            const oldFood = foods[food.id];
+            if (oldFood) {
+                const merged = {...oldFood, ...food};
+                if (food.orac && food.orac.wert === null && oldFood.orac &&
+                    typeof oldFood.orac.wert === "number") {
+                    merged.orac = {...food.orac, wert: oldFood.orac.wert,
+                        datenqualitaet: oldFood.orac.datenqualitaet || food.orac.datenqualitaet};
+                }
+                foods[food.id] = merged;
+            } else {
+                foods[food.id] = food;
+            }
+        });
 
-
-function getEntries() {
-
-    if (!data[today()]) {
-        data[today()] = [];
+        updateFoodList();
+        render();
+        document.getElementById("dbStatus").textContent =
+            Object.keys(foods).length + " Lebensmittel aus beiden Dateien geladen.";
+    } catch (error) {
+        console.error("Fehler beim Laden der Lebensmitteldatenbank:", error);
+        document.getElementById("dbStatus").textContent = "Fehler beim Laden der Datenbank.";
+        document.getElementById("food").replaceChildren(new Option("Datenbank nicht geladen", ""));
+        alert("Die Lebensmitteldatenbank konnte nicht geladen werden.\n\nBitte prüfe, ob beide JSON-Dateien im selben GitHub-Ordner wie index.html liegen und genau so heißen:\nlebensmittel.json\nbeeren_01_erste_5.json\n\nDetails: " + error.message);
     }
-
-    return data[today()];
 }
-
-
-function save() {
-
-    localStorage.setItem(
-        "oracData",
-        JSON.stringify(data)
-    );
-
-}
-
-
-function renderFoodInfo() {
-
-    let value = document.getElementById("food").value;
-    let food = foods[value];
-
-    if (!food) return;
-
-    document.getElementById("polyphenolInfo").innerHTML =
-        createInfo(food.polyphenole.gruppen.join(", "));
-
-    document.getElementById("bioInfo").innerHTML =
-        createInfo(food.bioverfuegbarkeit.bewertung);
-
-    document.getElementById("metabolismInfo").innerHTML =
-        createInfo(food.bioverfuegbarkeit.stoffwechsel);
-
-    document.getElementById("microbiomeInfo").innerHTML =
-        createInfo(food.bioverfuegbarkeit.darmmikrobiom);
-
-    document.getElementById("preparationInfo").innerHTML =
-        createInfo(food.bioverfuegbarkeit.zubereitung);
-
-    document.getElementById("synergyInfo").innerHTML =
-        createInfo(
-            "Synergien: " +
-            food.bioverfuegbarkeit.synergien.join(", ") +
-            " | Antagonisten: " +
-            food.bioverfuegbarkeit.antagonisten.join(", ")
-        );
-
-    document.getElementById("qualityInfo").innerHTML =
-        createInfo(food.orac.datenqualitaet);
-
-}
-
-function createInfo(text) {
-
-    return `
-        <div class="info-row">
-            ${text}
-            <br>
-            <span class="status">
-            Datenlage: noch zu ergänzen
-            </span>
-        </div>
-    `;
-
-}
-
-
 function addFood() {
-
-    let value = document.getElementById("food").value;
-    let grams = Number(document.getElementById("grams").value);
-    let food = foods[value];
-
-    if (!food) {
+    const id = document.getElementById("food").value;
+    const grams = Number(document.getElementById("grams").value);
+    const food = foods[id];
+    if (!id || !food) {
         alert("Bitte ein Lebensmittel auswählen.");
         return;
     }
-
-    if (!grams || grams <= 0) {
+    if (!Number.isFinite(grams) || grams <= 0) {
         alert("Bitte eine gültige Menge eingeben.");
         return;
     }
-
-    let oracValue = food.orac.wert;
+    const rawOrac = food.orac ? food.orac.wert : null;
+    const oracValue = typeof rawOrac === "number" && Number.isFinite(rawOrac)
+        ? rawOrac * grams / 100 : null;
 
     getEntries().push({
         id: food.id,
-        name: food.name_de,
+        name: food.name_de || food.id,
         grams: grams,
-        orac: oracValue === null ? null : oracValue * grams / 100
+        orac: oracValue
     });
-
     save();
     render();
 }
-
 function removeFood(index) {
-
     getEntries().splice(index, 1);
-
     save();
-
     render();
-
 }
-
-
 function render() {
-    let entries = getEntries();
-    let total = 0;
-    let totalGrams = 0;
-    let html = "";
+    const entries = getEntries();
+    let total = 0, totalGrams = 0, hasOracValue = false;
+    const container = document.getElementById("entries");
+    container.replaceChildren();
 
     entries.forEach((item, index) => {
         const grams = Number(item.grams) || 0;
         totalGrams += grams;
-
-        // Nur vorhandene numerische ORAC-Werte werden addiert.
         if (typeof item.orac === "number" && Number.isFinite(item.orac)) {
             total += item.orac;
+            hasOracValue = true;
         }
 
-        const oracText =
-            typeof item.orac === "number" && Number.isFinite(item.orac)
-                ? Math.round(item.orac).toLocaleString("de-DE") + " µmol TE"
-                : "ORAC-Wert nicht verfügbar";
-
-        html += `
-        <div class="entry">
-            <strong>${item.name}</strong><br>
-            Verzehrte Menge: ${grams.toLocaleString("de-DE")} g<br>
-            ORAC-Beitrag: ${oracText}
-            <button onclick="removeFood(${index})">Entfernen</button>
-        </div>
-        `;
+        const entry = document.createElement("div");
+        entry.className = "entry";
+        const name = document.createElement("strong");
+        name.textContent = item.name || item.id || "Lebensmittel";
+        const details = document.createElement("div");
+        const oracText = typeof item.orac === "number" && Number.isFinite(item.orac)
+            ? Math.round(item.orac).toLocaleString("de-DE") + " µmol TE"
+            : "ORAC-Wert nicht verfügbar";
+        details.textContent = "Verzehrte Menge: " + grams.toLocaleString("de-DE") +
+            " g | ORAC-Beitrag: " + oracText;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "secondary";
+        button.textContent = "Entfernen";
+        button.addEventListener("click", () => removeFood(index));
+        entry.append(name, details, button);
+        container.appendChild(entry);
     });
 
-    document.getElementById("entries").innerHTML =
-        html || "Noch keine Lebensmittel eingetragen.";
-
-    document.getElementById("total").innerText =
-        Math.round(total).toLocaleString("de-DE");
-
-    document.getElementById("totalGrams").innerText =
-        totalGrams.toLocaleString("de-DE") + " g";
+    if (!entries.length) container.textContent = "Noch keine Lebensmittel eingetragen.";
+    document.getElementById("total").textContent =
+        (hasOracValue ? Math.round(total).toLocaleString("de-DE") : "0") +
+        (entries.some(item => item.orac === null) ? " *" : "");
+    document.getElementById("totalGrams").textContent = totalGrams.toLocaleString("de-DE") + " g";
+    if (entries.some(item => item.orac === null)) {
+        document.getElementById("total").title = "* Mindestens ein Eintrag hat keinen verfügbaren ORAC-Wert; dieser wurde nicht mitgerechnet.";
+    } else {
+        document.getElementById("total").title = "";
+    }
 }
 
+document.getElementById("addButton").addEventListener("click", addFood);
+loadFoodDatabase();
 </script>
-
 </body>
 </html>
